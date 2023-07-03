@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+@import url('./preflight.css');
+
+:root {
+  /* breakpoint */
+  --bp-sm: 576px;
+  --bp-md: 768px;
+  --bp-lg: 992px;
+  --bp-xl: 1200px;
+
+  /* color */
+  --clr-black: 0 0% 0%;
+  --clr-white: 0 0% 100%;
+  --clr-gray-light-1: 0 0% 85%;    /* #dadada */
+  --clr-gray-light-2: 0 0% 93%;    /* #eeeeee */
+  --clr-gray-dark-1: 0 0% 37%;     /* #5e5e5e */
+  --clr-gray-dark-2: 204 7% 42%;   /* #636c72 */
+  --clr-gray-dark-3: 0 0% 13%;     /* #202020 */
+  --clr-gray-dark-4: 0 0% 7%;      /* #111 */
+  --clr-green-1: 89 40% 45%;       /* #74a044 */
+  --clr-green-2: 89 30% 31%;       /* #516838 */
+
+  /* font-family */
+  --ff-roboto: 'Roboto', sans-serif;
+
+  /* font-size */
+  --fs-100: 0.75rem;               /* 12px */
+  --fs-200: 0.875rem;              /* 14px */
+  --fs-300: 1rem;                  /* 16px */
+  --fs-400: 1.125rem;              /* 18px */
+  --fs-500: 1.25rem;               /* 20px */
+  --fs-600: 1.375rem;              /* 22px */
+  --fs-700: 1.5rem;                /* 24px */
+  --fs-800: 1.75rem;               /* 28px */
+  --fs-900: 2.5rem;                /* 40px */
+
+  /* font-weight */
+  --fw-light: 300;
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-bold: 700;
+  
+  /* space */
+  --spc-1: 0.25rem                 /* 4px */
+  --spc-1-5: 0.375rem              /* 6px */
+  --spc-2: 0.5rem                  /* 8px */
+  --spc-3: 0.75rem                 /* 12px */
+  --spc-3-5: 0.875rem              /* 14px */
+  --spc-4: 1rem                    /* 16px */
+  --spc-5: 1.25rem                 /* 20px */
+  --spc-5-5: 1.375rem              /* 22px */
+  --spc-6: 1.5rem                  /* 24px */
+  --spc-6-5: 1.625rem              /* 26px */
+  --spc-8: 2rem                    /* 32px */
+  --spc-10: 2.5rem                 /* 40px */
+  --spc-12: 3rem                   /* 48px */
+  --spc-16: 4rem                   /* 64px */
+}      
+
+html {
+  scroll-behavior: smooth;
+}
+
+.theme-light {
+  --clr-bg: var(--clr-white);
+  --clr-heading: var(--clr-gray-dark-4);
+  --clr-paragraph: var(--clr-gray-dark-1);
+  --clr-link: var(--clr-green-1);
+  --clr-border: var(--clr-gray-light-1);
+  --clr-accent: var(--clr-green-1);
+  --clr-accent-focus: var(--clr-green-2);
+  --clr-accent-content: var(--clr-white);
+  --clr-neutral: var(--clr-white);
+}
+
+body {
+  font-family: var(--ff-roboto);
+  font-weight: var(--fw-regular);
+  font-size: var(--fs-300);
+  color: hsl(var(--clr-heading));
+}
