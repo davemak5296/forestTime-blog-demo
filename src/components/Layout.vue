@@ -1,6 +1,6 @@
 <script setup>
 import Button from '@/components/Button.vue';
-import { RouterView } from 'vue-router';
+import { RouterView, RouterLink } from 'vue-router';
 import { onMounted } from 'vue';
 
 onMounted(() => {
@@ -48,15 +48,27 @@ onMounted(() => {
         <fa-icon class="icon" :icon="['fas', 'bars']" />
       </button>
       <ul class="nav-wrap">
-        <li class="nav-item">Home</li>
-        <li class="nav-item">Gardening</li>
-        <li class="nav-item">Outdoor Living</li>
-        <li class="nav-item">Indoor Living</li>
-        <li class="nav-item">Shopping Guide</li>
-        <li class="nav-item">Contact</li>
+        <li class="nav-item">
+          <RouterLink to="/">Home</RouterLink>
+        </li>
+        <li class="nav-item">
+          <RouterLink to="/gardening">Gardening</RouterLink>
+        </li>
+        <li class="nav-item">
+          <RouterLink to="/outdoor-living">Outdoor Living</RouterLink>
+        </li>
+        <li class="nav-item">
+          <RouterLink to="/indoor-living">Indoor Living</RouterLink>
+        </li>
+        <li class="nav-item">
+          <RouterLink to="/shopping">Shopping Guide</RouterLink>
+        </li>
+        <li class="nav-item">
+          <RouterLink to="/contact">Contact</RouterLink>
+        </li>
       </ul>
     </nav>
-    <RouterView />
+    <RouterView :key="$route.path" />
     <footer class="full-bleed">
       <img src="../assets/images/garden-footer-logo.png" alt="footer-logo">
       <p class="text">
@@ -195,18 +207,22 @@ onMounted(() => {
     max-height: 300px;
   }
 }
-.nav-item {
-  background-color: hsl(var(--c-primary) / 0.45);
+.nav-item a {
+  display: block;
   padding-block: var(--spc-2);
   padding-inline-start: var(--spc-1);
   border-block-end: 1px solid hsl(var(--c-base-100));
+  background-color: hsl(var(--c-primary) / 0.45);
   @media screen and (width >= 576px) {
     width: fit-content;
     padding: var(--spc-3-5);
     background-color: unset;
   }
 }
-.nav-item:is(:hover, :focus) {
+.nav-item .route-active {
+  color: hsl(var(--c-primary));
+}
+.nav-item a:is(:hover, :focus) {
   background-color: hsl(var(--c-primary-focus));
   color: hsl(var(--c-base-100));
   cursor: pointer;
