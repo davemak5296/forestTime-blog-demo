@@ -6,11 +6,16 @@ defineProps({
     default: 'normal',
     required: false
   },
+  type: {
+    type: String,
+    default: 'button',
+    required: false
+  }
 })
 </script>
 
 <template>
-  <button type="button" :class="['btn', size === 'sm' ? 'btn-sm' : '']">
+  <button :type="type === 'submit' ? 'submit' : 'button'" :class="['btn', size === 'sm' ? 'btn-sm' : '']">
     <slot></slot>
   </button>
 </template>

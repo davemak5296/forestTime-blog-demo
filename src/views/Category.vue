@@ -1,12 +1,7 @@
 <script setup>
-import { useRoute } from 'vue-router';
 import Excerpt from '@/components/Excerpt.vue';
 import SideBar from '@/components/SideBar.vue';
 import Pagination from '@/components/Pagination.vue';
-
-const route = useRoute();
-const rawCat = route.params.cat;
-const catShownInTitle = rawCat.charAt(0).toUpperCase() + rawCat.slice(1);
 
 </script>
 
@@ -14,7 +9,7 @@ const catShownInTitle = rawCat.charAt(0).toUpperCase() + rawCat.slice(1);
   <div class="container page-title-wrap">
     <h2 class="page-title">
       <fa-icon :icon="['fas', 'leaf']" class="icon" />
-      Category by: {{ catShownInTitle }}</h2>
+      Category by:&nbsp;<span>{{ $route.params.cat }}</span></h2>
   </div>
   <main class="container container-2c">
     <section>
@@ -40,7 +35,8 @@ const catShownInTitle = rawCat.charAt(0).toUpperCase() + rawCat.slice(1);
   display: flex;
   align-items: center;
   font-size: var(--fs-700);
-  font-weight: var(--fw-bold);
+  /* font-weight: var(--fw-bold); */
+  color: hsl(var(--c-base-inverse-400));
 }
 .page-title .icon {
   display: inline-block;
@@ -49,5 +45,10 @@ const catShownInTitle = rawCat.charAt(0).toUpperCase() + rawCat.slice(1);
   background-color: hsl(var(--c-primary));
   color: hsl(var(--c-base-100));
   border-radius: 50%;
+}
+.page-title span {
+  color: hsl(var(--c-base-inverse-200));
+  font-weight: var(--fw-bold);
+  text-transform: capitalize;
 }
 </style>

@@ -4,6 +4,7 @@ import Home from '@/views/Home.vue';
 
 const routes = [
   { path: '/', name: 'home', component: Home },
+  { path: '/contact', name: 'contact', component: () => import('@/views/Contact.vue') },
   { path: '/:cat', name: 'category', component: () => import('@/views/Category.vue') },
 
   {path: '/todo/:id', name: 'todo.show', component: () => import('@/views/TodoShow.vue')}
