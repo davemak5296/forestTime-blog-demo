@@ -2,7 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router';
 import Home from '@/views/Home.vue';
 
 const routes = [
-  { path: '/', name: 'Home', component: Home },
+  { path: '/', name: 'home', component: Home },
   {path: '/todo/:id', name: 'todo.show', component: () => import('@/views/TodoShow.vue')}
 ];
 
